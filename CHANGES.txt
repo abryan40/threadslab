@@ -1,0 +1,16 @@
+Below are all of the changes. I couldn't complete the lab entirely, but
+I feel like I was on the right track for much of it. The stumbling
+blocks were clone() and join(), I think.
+
+Makefile  - Removed forktest.c and added threadtest.c
+
+usys.S
+user.h
+syscall.h
+syscall.c
+sysproc.c - Added requisites for new system calls
+
+proc.c    - Implementations of clone() and join()
+
+ulib.c    - Implementations of thread_create(), thread_join(),
+            lock_init(), lock_acquire(), lock_release()
