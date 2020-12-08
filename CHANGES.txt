@@ -4,13 +4,25 @@ blocks were clone() and join(), I think.
 
 Makefile  - Removed forktest.c and added threadtest.c
 
+types.h   - Added ticket lock
+
 usys.S
 user.h
 syscall.h
 syscall.c
 sysproc.c - Added requisites for new system calls
 
-proc.c    - Implementations of clone() and join()
+proc.c    - Implementations of clone()* and join()*
 
 ulib.c    - Implementations of thread_create(), thread_join(),
             lock_init(), lock_acquire(), lock_release()
+
+threadstest.c   -   The testing function that spins off 10 threads which print out their thread number
+                    and change a shared data structure. The locks mean that the structure will be ordered
+                    at the end.
+
+
+Ultimately, I had compilation problems, and perhaps some more problems with clone().
+I had the idea as to what to change, but not necessarily all of the details such as
+argument handling. With a "functional" clone, I think the lock and thread implementations
+are correct.
